@@ -10,13 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_14_025005) do
+ActiveRecord::Schema.define(version: 2022_05_18_011648) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "tv_shows", force: :cascade do |t|
     t.string "name"
     t.text "summary"
     t.datetime "release_date"
-    t.float "rating"
+    t.float "rating", default: 0.0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
